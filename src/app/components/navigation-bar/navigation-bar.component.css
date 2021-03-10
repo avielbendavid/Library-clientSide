@@ -1,0 +1,19 @@
+#navigate_bar_container{
+    color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+#nav_bar_list{
+    display: flex;  
+}
+ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+#login_btn{
+    margin-right: 20px;
+}
