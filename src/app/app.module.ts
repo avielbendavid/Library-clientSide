@@ -11,6 +11,9 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminZoneComponent } from './components/admin-zone/admin-zone.component';
 import { CustomerZoneComponent } from './components/customer-zone/customer-zone.component';
 import { TableComponent } from './components/table/table.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { PersonalZoneComponent } from './components/personal-zone/personal-zone.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { TableComponent } from './components/table/table.component';
     LoginComponent,
     AdminZoneComponent,
     CustomerZoneComponent,
-    TableComponent
+    TableComponent,
+    AdminComponent,
+    CustomerComponent,
+    PersonalZoneComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ClientType } from '../enums/client-type.enum';
 import { Library } from '../models/library';
 
 @Injectable({
@@ -11,9 +12,9 @@ export class ApiService {
 
   //************************* LOGIN API *****************************
 
-  // login(userEmail: string, userPassword: string, clientType: ClientType) {
-  //   return this.httpClient.post("http://localhost:8080/login/login/" + userEmail + "/" + userPassword + "/" + clientType, null, { responseType: 'text' });
-  // }
+  login(userEmail: string, userPassword: string, clientType: ClientType) {
+    return this.httpClient.post("http://localhost:8080/login/login/" + userEmail + "/" + userPassword + "/" + clientType, null, { responseType: 'text' });
+  }
 
   //************************* LOGOUT API ****************************
 
