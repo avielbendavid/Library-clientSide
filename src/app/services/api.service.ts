@@ -12,8 +12,8 @@ export class ApiService {
 
   //************************* LOGIN API *****************************
 
-  login(userEmail: string, userPassword: string, clientType: ClientType) {
-    return this.httpClient.post("http://localhost:8080/login/login/" + userEmail + "/" + userPassword + "/" + clientType, null, { responseType: 'text' });
+  login(clientType: ClientType, userEmail: string, userPassword: string) {
+    return this.httpClient.post("http://localhost:8080/login/login/" + clientType + "/" + userEmail + "/" + userPassword, null, { responseType: 'text' });
   }
 
   //************************* LOGOUT API ****************************

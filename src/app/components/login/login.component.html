@@ -13,8 +13,12 @@
     font-weight: normal;
     font-size: 40px;
     color: #2fbee8;
-    "><span>LOG IN</span></header>
-        <input type="text" style=" margin: 10px auto;
+    ">
+            <span>LOG IN</span>
+        </header>
+        <form [formGroup]="loginFormGroup" style="display: flex;flex-direction: column;
+        align-items: center;width: 100%;">
+            <input type="text" style=" margin: 10px auto;
     border-radius: 3px;
     padding: 10px;
     border: 1px solid #CCC;
@@ -22,8 +26,8 @@
     background-color: #FEFEFE;
     color: #323440;
     width: 80%;
-    transition: 0.3s all;outline: none;" placeholder="user-email">
-        <input type="password" style=" margin: 10px auto; 
+    transition: 0.3s all;outline: none;" placeholder="user-email" formControlName="email">
+            <input type="password" style=" margin: 10px auto; 
     border-radius: 3px;
     padding: 10px;
     border: 1px solid #CCC;
@@ -31,18 +35,18 @@
     background-color: #FEFEFE;
     color: #323440;
     width: 80%;
-    transition: 0.3s all;outline: none;" placeholder="password">
+    transition: 0.3s all;outline: none;" placeholder="password" formControlName="password">
 
-        <br>
-        <label style="color: #23bbe8;
+            <br>
+            <label style="color: #23bbe8;
         text-transform: uppercase;">Client Type : ***</label>
-        <br>
-        <select class="form_control" formControlName="clientType">
-            <option *ngFor="let client of this.clientType | keyvalue">{{client.value}}
-            </option>
-        </select>
+            <br>
+            <select class="form_control" formControlName="clientType">
+                <option *ngFor="let client of userType | keyvalue" [value]="client.value">{{client.value}}
+                </option>
+            </select>
 
-        <button style="
+            <button style="
     border: none;
     background-image: linear-gradient(135deg, #22bae7 70%, #10acd9);
     color: #FFF;
@@ -54,6 +58,7 @@
     cursor: pointer;
     transition: 0.3s all;
     outline: none;
-    ">LOG IN</button>
+    " (click)="login()">LOG IN</button>
+        </form>
     </div>
 </div>

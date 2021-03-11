@@ -3,12 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ErrorService {
-
+export class AdminService {
+  tableColumn:string[]=['s','d','f'];
   constructor() { }
-
-  handleError(error: Error) {
-    console.log(error);
-    
-  }
 }

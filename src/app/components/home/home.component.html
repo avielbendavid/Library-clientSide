@@ -1,9 +1,59 @@
-<div style="height: 50%;background-image: url('/assets/images/library.jpg');
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: 100% 100%;box-shadow: 0px 0px 15px black;">
-    
-    <app-navigation-bar></app-navigation-bar>
+<main style="height: 100%;">
+    <section style="height: 50%;">
+        <div style="height: 100%;background-image: url('/assets/images/library.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;box-shadow: 0px 0px 15px black;">
 
-    <button mat-flat-button color="white" style="vertical-align:middle;letter-spacing: 7px;text-align: center; left: 50%;top: 50%; transform: translateX(-50%);">CONTACT</button>
-</div>
+            <app-navigation-bar></app-navigation-bar>
+
+            <button mat-flat-button color="white"
+                style="vertical-align:middle;letter-spacing: 7px;text-align: center; left: 50%;top: 50%; transform: translateX(-50%);">CONTACT</button>
+        </div>
+    </section>
+    <section style="height: 100%;color: #323440;font-weight: bold;">
+        <div style="height: 100%;display: flex;flex-direction: column;align-items: center;justify-content: center;">
+            <h3 style="width: 20%; font-weight: normal;">
+                <span>
+                    OUR SERVICES
+                </span>
+            </h3>
+            <div
+                style="width: 80%;height: 40%;display: flex;flex-wrap: wrap;align-items: center;justify-content: center;">
+                <div style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                 /* border: 0.5px solid blue; */
+                  width: 30%;height: 60%;">
+                    <img src="assets/images/manage.png" width="20%">
+                    <br>
+
+                    Manage your libraries
+                </div>
+                <div style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                  width: 30%;height: 60%;">
+                    <img src="assets/images/follow.png" width="20%">
+                    <br>
+                    Follow your books
+                </div>
+                <div style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 30%;height: 60%;">
+                    <img src="assets/images/web-browser.png" width="25%">
+                    <br>
+
+                    Web application
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

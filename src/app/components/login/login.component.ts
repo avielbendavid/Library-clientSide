@@ -11,7 +11,7 @@ import { ErrorService } from 'src/app/services/error.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  clientType = ClientType;
+  userType = ClientType;
   loginFormGroup: FormGroup;
   constructor(
     private apiService: ApiService,
@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
+
   login() {
     const fr = this.loginFormGroup.value;
     const user = {
@@ -35,7 +36,9 @@ export class LoginComponent implements OnInit {
       password: fr.password,
       clientType: fr.clientType
     }
-    this.apiService.login(user.email, user.password, user.clientType).subscribe(
+    console.log(user);
+    
+    this.apiService.login( user.clientType,user.email, user.password).subscribe(
       (token) => {
         localStorage.setItem("userType", user.clientType);
         localStorage.setItem("userName", user.clientType);

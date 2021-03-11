@@ -8,12 +8,12 @@ import {MatButtonModule} from '@angular/material/button';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { AdminZoneComponent } from './components/admin-zone/admin-zone.component';
-import { CustomerZoneComponent } from './components/customer-zone/customer-zone.component';
 import { TableComponent } from './components/table/table.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { PersonalZoneComponent } from './components/personal-zone/personal-zone.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,6 @@ import { PersonalZoneComponent } from './components/personal-zone/personal-zone.
     NavigationBarComponent,
     HomeComponent,
     LoginComponent,
-    AdminZoneComponent,
-    CustomerZoneComponent,
     TableComponent,
     AdminComponent,
     CustomerComponent,
@@ -33,6 +31,10 @@ import { PersonalZoneComponent } from './components/personal-zone/personal-zone.
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
