@@ -10,3 +10,12 @@ h3 {
      background:#fff; 
      padding:0 10px; 
  }
+
+ @media only screen and (max-width: 400px) {
+    .features_details_section {
+      font-size: 12px;
+    }
+    .feature_img{
+        width: 18%;
+    }
+  }
