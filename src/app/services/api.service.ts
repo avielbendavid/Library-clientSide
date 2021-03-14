@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ClientType } from '../enums/client-type.enum';
 import { Library } from '../models/library';
 
@@ -24,6 +25,11 @@ export class ApiService {
   public addLibrary(library: Library) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
     return this.httpClient.post("http://localhost:8080/api/admin/add-company", library, { headers: httpHeaders });
+  }
+
+  public getAllLibraries():Observable<Library[]>{
+  const  httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+  return this.httpClient.get<Library[]>('http://localhost:8080/api/admin/get-all-libraries',{headers:httpHeaders});   
   }
 
 

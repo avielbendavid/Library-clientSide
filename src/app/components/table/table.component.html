@@ -1,1 +1,16 @@
-<p>table works!</p>
+<table>
+    <thead>
+        <td *ngFor="let col of tableColumn">{{col}}</td>
+        <td>DELETE / EDIT</td>
+    </thead>
+    <tr *ngFor="let obj of tableData">
+        <td *ngFor="let property of properties">{{obj[property]}}</td>
+        <td>
+            <div class="operations_icons">
+                <img src="assets/images/delete_icon.png">
+                <img src="assets/images/edit_icon.png">
+            </div>
+        </td>
+    </tr>
+
+</table>

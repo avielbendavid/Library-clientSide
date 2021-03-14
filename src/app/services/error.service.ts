@@ -9,6 +9,5 @@ export class ErrorService {
 
   handleError(error: Error) {
     console.log(error);
-    
   }
 }
