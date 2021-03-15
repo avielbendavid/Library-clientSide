@@ -12,7 +12,8 @@ thead {
     height: 40px;
     color: white;
     text-align: center;
-    background-color: rgb(140 136 178);
+    /* background-color: rgb(140 136 178); */
+    background-color: rgb(25 23 47);
     text-transform: uppercase;
 }
 
