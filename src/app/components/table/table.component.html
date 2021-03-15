@@ -7,8 +7,9 @@
         <td *ngFor="let property of properties">{{obj[property]}}</td>
         <td>
             <div class="operations_icons">
-                <img src="assets/images/delete_icon.png">
-                <img src="assets/images/edit_icon.png">
+                <img src="assets/images/delete_icon.png" 
+                (click)="delete(obj['id'])">
+                <img src="assets/images/edit_icon.png" (click)="edit()">
             </div>
         </td>
     </tr>

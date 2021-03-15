@@ -5,16 +5,22 @@
     background-attachment: fixed;
     background-size: 100% 100%;box-shadow: 0px 0px 15px black;"></div>
     </section>
-    <button mat-fab color="primary" style="    position: relative;
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Libraries">
+            <button mat-fab color="primary" style="    position: relative;
     top: 150px;
     left: 20px;
     background-color: #614e82;font-size: 25px;font-weight: normal;">+</button>
-    <div style="margin-top: 100px;display: flex;flex-direction: column;justify-content: center;">
-      <span style="width: 100%;text-align: center;font-size: 40px;color: rgb(25 23 47);">
-          Libraries
-      </span>
-        <app-table [tableData]="this.libraries" [tableColumn]="this.columns"></app-table>
-    </div>
+            <div style="margin-top: 100px;display: flex;flex-direction: column;justify-content: center;">
+                <span style="width: 100%;text-align: center;font-size: 40px;color: rgb(25 23 47);">
+                    Libraries
+                </span>
+                <app-table [tableData]="this.libraries" [tableColumn]="this.columns"
+                    (deleteLibrary)="deleteLibrary($event)" (deleteLibraryBook)="deleteLibraryBook($event)"
+                    (deleteCustomer)="deleteCustomer($event)"></app-table>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
     <div style="height: 20%;">
     </div>
 </div>

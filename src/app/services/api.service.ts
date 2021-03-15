@@ -27,9 +27,19 @@ export class ApiService {
     return this.httpClient.post("http://localhost:8080/api/admin/add-company", library, { headers: httpHeaders });
   }
 
-  public getAllLibraries():Observable<Library[]>{
-  const  httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-  return this.httpClient.get<Library[]>('http://localhost:8080/api/admin/get-all-libraries',{headers:httpHeaders});   
+  public getAllLibraries(): Observable<Library[]> {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.get<Library[]>('http://localhost:8080/api/admin/get-all-libraries', { headers: httpHeaders });
+  }
+
+  public deleteLibrary(libraryId: number) {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.delete('http://localhost:8080/api/admin/delete-library/' + libraryId, { headers: httpHeaders, responseType: 'text' });
+  }
+
+  public deleteCustomer(customerId: number) {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.delete('http://localhost:8080/api/admin/delete-customer/' + customerId, { headers: httpHeaders, responseType: 'text' });
   }
 
 
