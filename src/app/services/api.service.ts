@@ -35,7 +35,7 @@ export class ApiService {
 
   public deleteLibrary(libraryId: number) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.delete('http://localhost:8080/api/admin/remove-library/' + libraryId, { headers: httpHeaders,responseType:'text'});
+    return this.httpClient.delete('http://localhost:8080/api/admin/delete-library/' + libraryId, { headers: httpHeaders,responseType:'text'});
   }
 
   public deleteCustomer(customerId: number) {

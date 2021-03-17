@@ -26,7 +26,7 @@ export class AdminComponent implements OnInit {
     private apiService: ApiService,
     private errorService: ErrorService,
     private tableService: TableService,
-    private router:Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.tableService.status = "libraries";
@@ -38,14 +38,14 @@ export class AdminComponent implements OnInit {
   refreshLibrariesTable() {
     this.librariesTableColumns = this.adminService.librariesTableColumns;
     this.apiService.getAllLibraries().subscribe(
-      (libraries) => {this.librariesTableData = libraries;},
+      (libraries) => { this.librariesTableData = libraries; },
       (error) => { this.errorService.handleError(error) }
     );
   }
   refreshCustomersTable() {
     this.customersTableColumns = this.adminService.customersTableColumns;
     this.apiService.getAllCustomers().subscribe(
-      (customers) => {this.customersTableData = customers;},
+      (customers) => { this.customersTableData = customers; },
       (error) => { this.errorService.handleError(error) }
     );
   }
@@ -54,14 +54,17 @@ export class AdminComponent implements OnInit {
   deleteLibrary(libraryId: number) {
     this.apiService.deleteLibrary(libraryId).subscribe(
       (response) => { alert('success!!!') },
-      (error) => {this.errorService.handleError(error)}
+      (error) => { this.errorService.handleError(error) }
     );
   }
   deleteLibraryBook(libraryId: number) {
     // this.apiService.
   }
-  deleteCustomer(libraryId: number) {
-    // this.apiService.
+  deleteCustomer(customerId: number) {
+    this.apiService.deleteCustomer(customerId).subscribe(
+      (response) => {alert('success delete customer');},
+      (error) => { this.errorService.handleError(error) }
+    );
   }
 
   IndexChanged(index: number) {
@@ -78,7 +81,7 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  goToHome(){
+  goToHome() {
     this.router.navigate(['/home']);
   }
 }

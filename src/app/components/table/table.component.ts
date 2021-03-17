@@ -44,7 +44,7 @@ export class TableComponent implements OnInit {
       case 'customers':
         this.dialog.open(ConfirmationDialogComponent, {
           data: "Are you sure you want to delete this customer?"
-          , panelClass: 'dialogPanel', backdropClass: 'dark'
+          , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'
         }).afterClosed().subscribe(
           (result: boolean) => {
             if (result) {
@@ -56,7 +56,7 @@ export class TableComponent implements OnInit {
           case 'libraryBooks':
             this.dialog.open(ConfirmationDialogComponent, {
               data: "Are you sure you want to delete this book?"
-              , panelClass: 'dialogPanel', backdropClass: 'dark'
+              , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'
             }).afterClosed().subscribe(
               (result: boolean) => {
                 if (result) {
@@ -68,7 +68,7 @@ export class TableComponent implements OnInit {
               case 'customersBooks':
                 this.dialog.open(ConfirmationDialogComponent, {
                   data: "Are you sure you want to return your book?"
-                  , panelClass: 'dialogPanel', backdropClass: 'dark'
+                  , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'
                 }).afterClosed().subscribe(
                   (result: boolean) => {
                     if (result) {
