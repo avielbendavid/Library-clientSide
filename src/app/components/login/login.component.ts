@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.loginFormGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(8)]],
-      clientType: ['', Validators.required],
+      clientType: ['', Validators.required]
     });
   }
 
@@ -36,9 +36,7 @@ export class LoginComponent implements OnInit {
       password: fr.password,
       clientType: fr.clientType
     }
-    console.log(user);
-    
-    this.apiService.login( user.clientType,user.email, user.password).subscribe(
+    this.apiService.login(user.clientType, user.email, user.password).subscribe(
       (token) => {
         localStorage.setItem("userType", user.clientType);
         localStorage.setItem("userName", user.clientType);
@@ -48,5 +46,8 @@ export class LoginComponent implements OnInit {
       (error) => { this.errorService.handleError(error) }
     );
   }
-
+a(){
+  console.dir(this.loginFormGroup);
+  
+}
 }

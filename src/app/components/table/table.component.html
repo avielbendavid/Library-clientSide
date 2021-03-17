@@ -1,7 +1,7 @@
 <table>
     <thead>
-        <td *ngFor="let col of tableColumn">{{col}}</td>
-        <td>DELETE / EDIT</td>
+        <th *ngFor="let col of tableColumn">{{col}}</th>
+        <th>DELETE / EDIT</th>
     </thead>
     <tr *ngFor="let obj of tableData">
         <td *ngFor="let property of properties">{{obj[property]}}</td>

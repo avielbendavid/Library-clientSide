@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AdminService {
-  tableColumn:string[]=['id','name','city'];
+  librariesTableColumns:string[]=['id','name','city'];
+  customersTableColumns:string[]=['id','name'];
+  booksTableColumns:string[]=['id','name','city'];
   constructor() { }
 }

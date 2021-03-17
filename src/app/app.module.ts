@@ -16,8 +16,8 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { PersonalZoneComponent } from './components/personal-zone/personal-zone.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ConfirmationDialogComponent } from './components/diaplg/confirmation-dialog/confirmation-dialog.component';
-import { AddLibraryDialogComponent } from './components/diaplg/add-library-dialog/add-library-dialog.component';
+import { AddLibraryDialogComponent } from './components/dialog/add-library-dialog/add-library-dialog.component';
+import { ConfirmationDialogComponent } from './components/dialog/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
