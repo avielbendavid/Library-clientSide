@@ -7,7 +7,7 @@ export class TableService {
   // libraries:boolean;
   // custumers:boolean;
   // libraryBooks:boolean;
-  // customerBooke:boolean;
+  // customerBooks:boolean;
   status:string="";
   constructor() { }
 
@@ -15,6 +15,6 @@ export class TableService {
     // this.libraries=false;
     // this.custumers=false;
     // this.libraryBooks=false;
-    // this.customerBooke=false;
+    // this.customerBooks=false;
   }
 }

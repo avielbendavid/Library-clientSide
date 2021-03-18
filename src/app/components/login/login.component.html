@@ -32,9 +32,11 @@
             <span class="warn_message" *ngIf="
             this.loginFormGroup.controls.clientType.errors?.required&&this.loginFormGroup.controls.clientType.touched">
                 * Please choose client type</span>
-            <button [disabled]="this.loginFormGroup.invalid"
+            <button *ngIf="!loading" [disabled]="this.loginFormGroup.invalid"
                 [ngClass]="{'login_btn':this.loginFormGroup.invalid,'available': this.loginFormGroup.valid}"
                 (click)="login()">LOG IN</button>
+            <div *ngIf="loading" style="margin: 15px;" class="spinner-border" role="status">
+            </div>
         </form>
     </div>
 </div>

@@ -12,7 +12,7 @@ export class TableComponent implements OnInit {
   @Input() public tableColumn: string[];
   @Input() public tableData: object[];
   @Output() deleteLibrary: EventEmitter<number> = new EventEmitter<number>();
-  @Output() deleteLibraryBook: EventEmitter<number> = new EventEmitter<number>();
+  @Output() deleteBook: EventEmitter<number> = new EventEmitter<number>();
   @Output() deleteCustomer: EventEmitter<number> = new EventEmitter<number>();
   @Output() deleteCustomerBook: EventEmitter<number> = new EventEmitter<number>();
 
@@ -53,19 +53,19 @@ export class TableComponent implements OnInit {
             }
           });
           break;
-          case 'libraryBooks':
+          case 'books':
             this.dialog.open(ConfirmationDialogComponent, {
               data: "Are you sure you want to delete this book?"
               , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'
             }).afterClosed().subscribe(
               (result: boolean) => {
                 if (result) {
-                  this.deleteLibraryBook.emit(id);
+                  this.deleteBook.emit(id);
                   console.log('from libraryBooks case');
                 }
               });
               break;
-              case 'customersBooks':
+              case 'customerBooks':
                 this.dialog.open(ConfirmationDialogComponent, {
                   data: "Are you sure you want to return your book?"
                   , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'

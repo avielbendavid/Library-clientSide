@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddLibraryDialogComponent } from './components/dialog/add-library-dialog/add-library-dialog.component';
 import { ConfirmationDialogComponent } from './components/dialog/confirmation-dialog/confirmation-dialog.component';
+import { ResponseComponent } from './components/response/response.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ConfirmationDialogComponent } from './components/dialog/confirmation-di
     CustomerComponent,
     PersonalZoneComponent,
     ConfirmationDialogComponent,
-    AddLibraryDialogComponent
+    AddLibraryDialogComponent,
+    ResponseComponent
   ],
   imports: [
     BrowserModule,

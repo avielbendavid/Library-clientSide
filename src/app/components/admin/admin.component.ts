@@ -53,16 +53,19 @@ export class AdminComponent implements OnInit {
   }
   deleteLibrary(libraryId: number) {
     this.apiService.deleteLibrary(libraryId).subscribe(
-      (response) => { alert('success!!!') },
+      (response) => { this.refreshLibrariesTable() },
       (error) => { this.errorService.handleError(error) }
     );
   }
-  deleteLibraryBook(libraryId: number) {
-    // this.apiService.
+  deleteBook(bookId: number) {
+    this.apiService.deleteBook(bookId).subscribe(
+      () => { },
+      () => { }
+    );
   }
   deleteCustomer(customerId: number) {
     this.apiService.deleteCustomer(customerId).subscribe(
-      (response) => {alert('success delete customer');},
+      (response) => { this.refreshCustomersTable() },
       (error) => { this.errorService.handleError(error) }
     );
   }

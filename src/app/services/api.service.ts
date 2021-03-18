@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ClientType } from '../enums/client-type.enum';
+import { Book } from '../models/book';
 import { Customer } from '../models/customer';
 import { Library } from '../models/library';
 
@@ -46,6 +47,18 @@ export class ApiService {
   public getAllCustomers():Observable<Customer[]>{
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
     return this.httpClient.get<Customer[]>('http://localhost:8080/api/admin/get-all-customers', { headers: httpHeaders });
+  }
+
+  public deleteBook(bookId:number){
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.get<Customer[]>('http://localhost:8080/api/admin/delete-book/'+bookId, { headers: httpHeaders });
+  }
+
+    //************************* CUSTOMER API *****************************
+
+  public getAllCustomerBooks():Observable<Book[]>{
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.get<Book[]>('http://localhost:8080/api/customer/get-all-customer-books', { headers: httpHeaders });
   }
 
 
