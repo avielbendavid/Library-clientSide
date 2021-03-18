@@ -10,6 +10,7 @@ export class ResponseComponent implements OnInit {
   response: number;
   constructor(private responseService: ResponseService) { }
   ngOnInit(): void {
+    console.log(this.responseService.response);
     this.response = this.responseService.response;
   }
 

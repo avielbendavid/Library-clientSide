@@ -10,9 +10,9 @@
 </svg>
 <div class="message-box">
   <h1>Sorry</h1>
-  <p *ngIf="response==0">Connection refused</p>
-  <p *ngIf="response==401">Unauthorized... Please login</p>
-  <p *ngIf="response==404">404... Page not found</p>
+  <p class="message" *ngIf="response==0">The connection was refused <br>please try again later...</p>
+  <p class="message" *ngIf="response==401">Unauthorized... Please login</p>
+  <p class="message" *ngIf="response==404">404... Page not found</p>
   <div class="buttons-con">
     <div class="action-link-wrap">
       <a (click)="goBack()" class="link-button link-back-button">Go Back</a>
