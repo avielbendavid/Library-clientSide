@@ -1,19 +1,19 @@
 <div class="container">
-    <section style="height: 350px;">
+    <section style="height: 350px;    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;">
         <div class="header_img_div">
-            <button mat-fab class="header_btn" (click)="goToHome()">
+            <!-- <button mat-fab class="header_btn" (click)="goToHome()">
                 <img src="assets/images/home_icon.png" width="50%">
-            </button>
+            </button> -->
         </div>
     </section>
-    <mat-tab-group mat-align-tabs="center">
-        <mat-tab label="My Books">
             <div class="table_container">
                 <span class="table_header">
                     My Books
                 </span>
-                <app-table [tableColumn]="this.booksTableColumn" [tableData]="this.booksTableData"></app-table>
+                <app-table [tableColumn]="this.booksTableColumn" [tableData]="this.booksTableData" (deleteCustomerBook)="delete($event)"></app-table>
             </div>
-        </mat-tab>
-    </mat-tab-group>
 </div>

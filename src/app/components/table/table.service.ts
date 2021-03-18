@@ -4,17 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TableService {
-  // libraries:boolean;
-  // custumers:boolean;
-  // libraryBooks:boolean;
-  // customerBooks:boolean;
-  status:string="";
+
+  status: string = "";
   constructor() { }
 
-  refresh(){
-    // this.libraries=false;
-    // this.custumers=false;
-    // this.libraryBooks=false;
-    // this.customerBooks=false;
+  refresh() {
+
   }
 }

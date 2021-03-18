@@ -12,24 +12,35 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-  booksTableData:Book[] =[];
-  booksTableColumn:string[]=[];
-  constructor(private router:Router,private tableService:TableService,private customerService:CustomerService,private apiService:ApiService,private errorService:ErrorService) { }
+  booksTableData: Book[] = [];
+  booksTableColumn: string[] = [];
+  constructor(private router: Router,
+    private tableService: TableService,
+    private customerService: CustomerService,
+    private apiService: ApiService,
+    private errorService: ErrorService) { }
 
   ngOnInit(): void {
-    this.tableService.status="customerBooks";
+    this.tableService.status = "customerBooks";
     this.refreshBooksTable();
   }
-  refreshBooksTable(){
-    this.booksTableColumn=this.customerService.customerBooksTableColumns;
+  refreshBooksTable() {
+    this.booksTableColumn = this.customerService.customerBooksTableColumns;
     this.apiService.getAllCustomerBooks().subscribe(
-      (books)=>{this.booksTableData=books;},
-      (error)=>{this.errorService.handleError(error);}
+      (books) => { this.booksTableData = books; },
+      (error) => { this.errorService.handleError(error); }
     );
   }
-  
-  goToHome(){
+
+  goToHome() {
     this.router.navigate(['/home']);
+  }
+
+  delete(bookId: number) {
+    this.apiService.deleteCustomerBook(bookId).subscribe(
+      (response) => { alert(response); },
+      (error) => { this.errorService.handleError(error); }
+    );
   }
 
 }

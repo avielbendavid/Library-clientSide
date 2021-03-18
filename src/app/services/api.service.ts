@@ -61,5 +61,9 @@ export class ApiService {
     return this.httpClient.get<Book[]>('http://localhost:8080/api/customer/get-all-customer-books', { headers: httpHeaders });
   }
 
+  public deleteCustomerBook(bookId:number){
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.delete('http://localhost:8080/api/customer/delete-customer-book/'+bookId, { headers: httpHeaders });
+  }
 
 }
