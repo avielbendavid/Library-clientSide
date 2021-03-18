@@ -44,9 +44,9 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("userName", user.clientType);
         localStorage.setItem("token", token);
         this.router.navigate(['personal-zone']);
-        // this.loading = false;
+        this.loading = false;
       },
-      (error) => { this.errorService.handleError(error);  }
+      (error) => { this.errorService.handleError(error); this.loading = false; }
     );
   }
   a() {
