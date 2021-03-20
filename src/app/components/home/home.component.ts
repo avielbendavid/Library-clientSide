@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Library } from 'src/app/models/library';
 
 @Component({
@@ -8,12 +9,16 @@ import { Library } from 'src/app/models/library';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  constructor(private router:Router) {
 
   }
 
   ngOnInit(): void {
 
+  }
+
+  contact(){
+    this.router.navigate(['/contact']);
   }
 
 }

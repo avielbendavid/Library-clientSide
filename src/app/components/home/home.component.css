@@ -28,6 +28,7 @@ h3 span {
   top: 50%;
   transform: translateX(-50%);
   height: 50px;
+  box-shadow: 0px 0px 5px beige;
   animation: btn-load 700ms;
 }
 

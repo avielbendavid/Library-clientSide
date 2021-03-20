@@ -19,6 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddLibraryDialogComponent } from './components/dialog/add-library-dialog/add-library-dialog.component';
 import { ConfirmationDialogComponent } from './components/dialog/confirmation-dialog/confirmation-dialog.component';
 import { ResponseComponent } from './components/response/response.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { EditDialogComponent } from './components/dialog/edit-dialog/edit-dialog.component';
+import { AddDialogComponent } from './components/dialog/add-dialog/add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ResponseComponent } from './components/response/response.component';
     PersonalZoneComponent,
     ConfirmationDialogComponent,
     AddLibraryDialogComponent,
-    ResponseComponent
+    ResponseComponent,
+    ContactComponent,
+    EditDialogComponent,
+    AddDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -38,8 +38,8 @@ export class CustomerComponent implements OnInit {
 
   delete(bookId: number) {
     this.apiService.deleteCustomerBook(bookId).subscribe(
-      (response) => { alert(response); },
-      (error) => { this.errorService.handleError(error); }
+      (response) => { this.refreshBooksTable(); },
+      (error) => { this.errorService.handleError(error); console.log(error); }
     );
   }
 
