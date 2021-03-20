@@ -16,7 +16,6 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { PersonalZoneComponent } from './components/personal-zone/personal-zone.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddLibraryDialogComponent } from './components/dialog/add-library-dialog/add-library-dialog.component';
 import { ConfirmationDialogComponent } from './components/dialog/confirmation-dialog/confirmation-dialog.component';
 import { ResponseComponent } from './components/response/response.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -34,7 +33,6 @@ import { AddDialogComponent } from './components/dialog/add-dialog/add-dialog.co
     CustomerComponent,
     PersonalZoneComponent,
     ConfirmationDialogComponent,
-    AddLibraryDialogComponent,
     ResponseComponent,
     ContactComponent,
     EditDialogComponent,
