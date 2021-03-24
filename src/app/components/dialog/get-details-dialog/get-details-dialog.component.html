@@ -1,0 +1,14 @@
+<div style="height: 100%;display: flex;flex-direction: column; justify-content: space-evenly;align-items: center;">
+    <span style="font-size: 40px;
+    letter-spacing: 15px;
+">
+        DETAILS
+    </span>
+    <img src="assets/images/details.jpg" width="100%" height="40%">
+    <span style="display: flex;flex-direction: column;justify-content: space-between;">
+        <label style="font-size: 18px;letter-spacing: 2px;" *ngFor="let attribute of properties">{{attribute}}:
+            <span>{{obj[attribute]}}</span>
+        </label>
+        <br>
+    </span>
+</div>

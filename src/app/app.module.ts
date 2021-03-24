@@ -21,6 +21,7 @@ import { ResponseComponent } from './components/response/response.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EditDialogComponent } from './components/dialog/edit-dialog/edit-dialog.component';
 import { AddDialogComponent } from './components/dialog/add-dialog/add-dialog.component';
+import { GetDetailsDialogComponent } from './components/dialog/get-details-dialog/get-details-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AddDialogComponent } from './components/dialog/add-dialog/add-dialog.co
     ResponseComponent,
     ContactComponent,
     EditDialogComponent,
-    AddDialogComponent
+    AddDialogComponent,
+    GetDetailsDialogComponent
   ],
   imports: [
     BrowserModule,

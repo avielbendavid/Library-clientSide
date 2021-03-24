@@ -4,7 +4,7 @@
         <th>DELETE / EDIT</th>
     </thead>
     <tr *ngFor="let obj of tableData">
-        <td *ngFor="let property of properties">{{obj[property]}}</td>
+        <td *ngFor="let property of properties" (click)="getDetails(property,obj)">{{obj[property]}}</td>
         <td>
             <div class="operations_icons">
                 <img src="assets/images/delete_icon.png" 

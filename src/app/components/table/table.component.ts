@@ -1,6 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Library } from 'src/app/models/library';
+import { ApiService } from 'src/app/services/api.service';
+import { ErrorService } from 'src/app/services/error.service';
 import { ConfirmationDialogComponent } from '../dialog/confirmation-dialog/confirmation-dialog.component';
+import { GetDetailsDialogComponent } from '../dialog/get-details-dialog/get-details-dialog.component';
 import { TableService } from './table.service';
 
 @Component({
@@ -18,7 +22,9 @@ export class TableComponent implements OnInit {
 
   properties: string[];
   constructor(private tableService: TableService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private apiService: ApiService,
+    private errorService: ErrorService) { }
 
   ngOnInit(): void {
     // this.properties=Object.getOwnPropertyNames(this.tableData[0]);
@@ -32,7 +38,7 @@ export class TableComponent implements OnInit {
       case 'libraries':
         this.dialog.open(ConfirmationDialogComponent, {
           data: "Are you sure you want to delete this library?"
-          , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'
+          , panelClass: 'dialogPanel', backdropClass: 'dark', width: '500px', height: '250px'
         }).afterClosed().subscribe(
           (result: boolean) => {
             if (result) {
@@ -44,7 +50,7 @@ export class TableComponent implements OnInit {
       case 'customers':
         this.dialog.open(ConfirmationDialogComponent, {
           data: "Are you sure you want to delete this customer?"
-          , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'
+          , panelClass: 'dialogPanel', backdropClass: 'dark', width: '500px', height: '250px'
         }).afterClosed().subscribe(
           (result: boolean) => {
             if (result) {
@@ -52,33 +58,80 @@ export class TableComponent implements OnInit {
               console.log('from customers case');
             }
           });
-          break;
-          case 'books':
-            this.dialog.open(ConfirmationDialogComponent, {
-              data: "Are you sure you want to delete this book?"
-              , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'
-            }).afterClosed().subscribe(
-              (result: boolean) => {
-                if (result) {
-                  this.deleteBook.emit(id);
-                  console.log('from libraryBooks case');
-                }
-              });
-              break;
-              case 'customerBooks':
-                this.dialog.open(ConfirmationDialogComponent, {
-                  data: "Are you sure you want to return your book?"
-                  , panelClass: 'dialogPanel', backdropClass: 'dark',width:'500px',height:'250px'
-                }).afterClosed().subscribe(
-                  (result: boolean) => {
-                    if (result) {
-                      this.deleteCustomerBook.emit(id);
-                      console.log('from customerBooks case');
+        break;
+      case 'books':
+        this.dialog.open(ConfirmationDialogComponent, {
+          data: "Are you sure you want to delete this book?"
+          , panelClass: 'dialogPanel', backdropClass: 'dark', width: '500px', height: '250px'
+        }).afterClosed().subscribe(
+          (result: boolean) => {
+            if (result) {
+              this.deleteBook.emit(id);
+              console.log('from libraryBooks case');
+            }
+          });
+        break;
+      case 'customerBooks':
+        this.dialog.open(ConfirmationDialogComponent, {
+          data: "Are you sure you want to return your book?"
+          , panelClass: 'dialogPanel', backdropClass: 'dark', width: '500px', height: '250px'
+        }).afterClosed().subscribe(
+          (result: boolean) => {
+            if (result) {
+              this.deleteCustomerBook.emit(id);
+              console.log('from customerBooks case');
             }
           });
         break;
     }
   }
+
+
+
+  getDetails(property: any, obj: Object) {
+    if (property == "id") {
+      console.log(property);
+      console.dir(property);
+
+
+      this.dialog.open(GetDetailsDialogComponent, { data: obj, panelClass: 'dialogPanel', backdropClass: 'dark', width: '400px', height: '550px' });
+    }
+  }
+
+  // getDetails(property: any, obj: Object) {
+  //   if (property == "id") {
+  //     console.log(obj[property]);
+  //     const status = this.tableService.status;
+  //     let objFromDB: Object;
+  //     switch (status) {
+  //       case 'libraries':
+  //         this.apiService.getOneLibrary(obj[property]).subscribe(
+  //           (library) => { objFromDB = library },
+  //           (error) => { this.errorService.handleError(error) }
+  //         );
+  //         break;
+  //       case 'customers':
+  //         this.apiService.getOneLibrary(property).subscribe(
+  //           (customer) => { objFromDB = customer },
+  //           (error) => { this.errorService.handleError(error) }
+  //         );
+  //         break;
+  //       case 'books':
+  //         this.apiService.getOneLibrary(property).subscribe(
+  //           (book) => { objFromDB = book },
+  //           (error) => { this.errorService.handleError(error) }
+  //         );
+  //         break;
+  //       case 'customerBooks':
+  //         this.apiService.getOneLibrary(property).subscribe(
+  //           (customerBook) => { objFromDB = customerBook },
+  //           (error) => { this.errorService.handleError(error) }
+  //         );
+  //         break;
+  //     }
+  //     this.dialog.open(GetDetailsDialogComponent, { data: obj, panelClass: 'dialogPanel', backdropClass: 'dark', width: '400px', height: '550px' });
+  //   }
+  // }
   edit() {
 
   }

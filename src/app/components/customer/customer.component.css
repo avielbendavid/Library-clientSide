@@ -53,14 +53,14 @@
     animation: header-btn 700ms;
 }
 .container{
-    background-color: #181818;;
+    /* background-color: #181818; */
     min-height: 100%;
 }
 .table_header {
     width: 100%;
     text-align: center;
     font-size: 40px;
-    color: white;
+    /* color: white; */
     text-shadow: 0px 0px 5px;
 }
 .table_container {

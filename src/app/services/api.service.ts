@@ -34,36 +34,51 @@ export class ApiService {
     return this.httpClient.get<Library[]>('http://localhost:8080/api/admin/get-all-libraries', { headers: httpHeaders });
   }
 
-  public deleteLibrary(libraryId: number) {
+  public getAllCustomers(): Observable<Customer[]> {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.delete('http://localhost:8080/api/admin/delete-library/' + libraryId, { headers: httpHeaders,responseType:'text'});
+    return this.httpClient.get<Customer[]>('http://localhost:8080/api/admin/get-all-customers', { headers: httpHeaders });
+  }
+  public getAllBooks(): Observable<Book[]> {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.get<Book[]>('http://localhost:8080/api/admin/get-all-books', { headers: httpHeaders });
   }
 
+  public deleteLibrary(libraryId: number) {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.delete('http://localhost:8080/api/admin/delete-library/' + libraryId, { headers: httpHeaders, responseType: 'text' });
+  }
   public deleteCustomer(customerId: number) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
     return this.httpClient.delete('http://localhost:8080/api/admin/delete-customer/' + customerId, { headers: httpHeaders, responseType: 'text' });
   }
-
-  public getAllCustomers():Observable<Customer[]>{
+  public deleteBook(bookId: number) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.get<Customer[]>('http://localhost:8080/api/admin/get-all-customers', { headers: httpHeaders });
+    return this.httpClient.get<Customer[]>('http://localhost:8080/api/admin/delete-book/' + bookId, { headers: httpHeaders });
   }
 
-  public deleteBook(bookId:number){
+  public getOneLibrary(libraryId: number) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.get<Customer[]>('http://localhost:8080/api/admin/delete-book/'+bookId, { headers: httpHeaders });
+    return this.httpClient.get('http://localhost:8080/api/admin/get-one-library/' + libraryId, { headers: httpHeaders });
+  }
+  public getOneCustomer(customerId: number) {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.get('http://localhost:8080/api/admin/get-one-customer/' + customerId, { headers: httpHeaders });
+  }
+  public getOneBook(bookId: number) {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.get('http://localhost:8080/api/admin/get-one-book/' + bookId, { headers: httpHeaders });
   }
 
-    //************************* CUSTOMER API *****************************
+  //************************* CUSTOMER API *****************************
 
-  public getAllCustomerBooks():Observable<Book[]>{
+  public getAllCustomerBooks(): Observable<Book[]> {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
     return this.httpClient.get<Book[]>('http://localhost:8080/api/customer/get-all-customer-books', { headers: httpHeaders });
   }
 
-  public deleteCustomerBook(bookId:number){
+  public deleteCustomerBook(bookId: number) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.delete('http://localhost:8080/api/customer/delete-customer-book/'+bookId, { headers: httpHeaders });
+    return this.httpClient.delete('http://localhost:8080/api/customer/delete-customer-book/' + bookId, { headers: httpHeaders });
   }
 
 }

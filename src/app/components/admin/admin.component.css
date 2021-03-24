@@ -1,6 +1,6 @@
 .header_img_div {
     height: 100%;
-    background-image: url('/assets/images/admin5.jpg');
+    background-image: url('/assets/images/admin6.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -30,15 +30,15 @@
     transform: translate(-50%, -50%);
     height: 70px;
     width: 70px;
-    box-shadow: 0px 0px 15px #6c47ff;
-    background-color: rgb(25 23 47);
+    box-shadow: 0px 0px 5px #e4e4e7;
+    background-color: rgb(18, 13, 43);
     animation: header-btn 700ms;
 }
 
 .container {
-    /* height: 100%; */
-    min-height: 100%;
-    background-color: #181818;
+    height: 100%;
+    /* min-height: 100%; */
+    /* background-color: #181818; */
 }
 
 .add_btn {
@@ -54,7 +54,7 @@
     width: 100%;
     text-align: center;
     font-size: 40px;
-    color: white;
+    /* color: white; */
     text-shadow: 0px 0px 5px;
 }
 

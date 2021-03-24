@@ -6,35 +6,37 @@
             </button>
         </div>
     </section>
-    <mat-tab-group mat-align-tabs="center" (selectedIndexChange)="IndexChanged($event)">
-        <mat-tab label="Libraries">
-            <div class="table_container">
-                <span class="table_header">
-                    Libraries
-                </span>
-                <app-table [tableColumn]="this.librariesTableColumns" [tableData]="this.librariesTableData"
-                    (deleteLibrary)="deleteLibrary($event)"></app-table>
-            </div>
-        </mat-tab>
-        <mat-tab label="Customers">
-            <button mat-fab color="primary" class="add_btn">+</button>
-            <div class="table_container">
-                <span class="table_header">
-                    Customers
-                </span>
-                <app-table [tableColumn]="this.customersTableColumns" [tableData]="this.customersTableData"
-                    (deleteCustomer)="deleteCustomer($event)"></app-table>
-            </div>
-        </mat-tab>
-        <mat-tab label="Books">
-            <button mat-fab color="primary">+</button>
-            <div class="table_container">
-                <span class="table_header">
-                    Books
-                </span>
-                <app-table [tableData]="this.librariesTableData" [tableColumn]="this.librariesTableColumns"
-                    (deleteBook)="deleteBook($event)"></app-table>
-            </div>
-        </mat-tab>
-    </mat-tab-group>
+    <section style="min-height: 100%;">
+        <mat-tab-group mat-align-tabs="center" (selectedIndexChange)="IndexChanged($event)">
+            <mat-tab label="Libraries">
+                <div class="table_container">
+                    <span class="table_header">
+                        Libraries
+                    </span>
+                    <app-table [tableColumn]="this.librariesTableColumns" [tableData]="this.librariesTableData"
+                        (deleteLibrary)="deleteLibrary($event)"></app-table>
+                </div>
+            </mat-tab>
+            <mat-tab label="Customers">
+                <button mat-fab color="primary" class="add_btn">+</button>
+                <div class="table_container">
+                    <span class="table_header">
+                        Customers
+                    </span>
+                    <app-table [tableColumn]="this.customersTableColumns" [tableData]="this.customersTableData"
+                        (deleteCustomer)="deleteCustomer($event)"></app-table>
+                </div>
+            </mat-tab>
+            <mat-tab label="Books">
+                <button mat-fab color="primary">+</button>
+                <div class="table_container">
+                    <span class="table_header">
+                        Books
+                    </span>
+                    <app-table [tableData]="this.librariesTableData" [tableColumn]="this.librariesTableColumns"
+                        (deleteBook)="deleteBook($event)"></app-table>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </section>
 </div>
