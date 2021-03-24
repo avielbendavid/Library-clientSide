@@ -11,6 +11,8 @@ export class ErrorService {
   constructor(private responseService:ResponseService,private router:Router) { }
 
   handleError(error: HttpErrorResponse) {
+    console.log(error);
+    
     if(error.status==0){
       this.responseService.response=0;
       this.router.navigate(['/response']);

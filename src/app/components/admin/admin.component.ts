@@ -5,6 +5,7 @@ import { Customer } from 'src/app/models/customer';
 import { Library } from 'src/app/models/library';
 import { ApiService } from 'src/app/services/api.service';
 import { ErrorService } from 'src/app/services/error.service';
+import { AddDialogComponent } from '../dialog/add-dialog/add-dialog.component';
 import { TableService } from '../table/table.service';
 import { AdminService } from './admin.service';
 
@@ -26,7 +27,8 @@ export class AdminComponent implements OnInit {
     private apiService: ApiService,
     private errorService: ErrorService,
     private tableService: TableService,
-    private router: Router) { }
+    private router: Router,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.tableService.status = "libraries";
@@ -50,6 +52,11 @@ export class AdminComponent implements OnInit {
     );
   }
   refreshBooksTable() {
+    this.booksTableColumns = this.adminService.booksTableColumns;
+    this.apiService.getAllBooks().subscribe(
+      (books) => { this.booksTableData = books; },
+      (error) => { this.errorService.handleError(error) }
+    );
   }
   deleteLibrary(libraryId: number) {
     this.apiService.deleteLibrary(libraryId).subscribe(
@@ -82,6 +89,10 @@ export class AdminComponent implements OnInit {
         this.tableService.status = 'books';
         break;
     }
+  }
+
+  add() {
+    this.dialog.open(AddDialogComponent, { backdropClass: 'dark', panelClass: 'dialogPanel' });
   }
 
   goToHome() {

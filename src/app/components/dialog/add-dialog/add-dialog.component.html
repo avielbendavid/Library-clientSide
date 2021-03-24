@@ -1,1 +1,37 @@
-<p>add-dialog works!</p>
+<div [ngSwitch]="status">
+
+
+    <div *ngSwitchCase="'libraries'">
+        <form [formGroup]="addLibraryFormGroup" autocomplete="off">
+            <div style="display: flex;flex-direction: column;">
+                <span class="dialog_span">NAME</span>
+                <input formControlName="name" type="text" class="dialog_input" placeholder="Name">
+                <span class="dialog_span">CITY</span>
+                <input type="text" formControlName="city" class="dialog_input" placeholder="City">
+                <button (click)="addLibrary()" class="dialog_btn">ADD LIBRARY</button>
+            </div>
+        </form>
+    </div>
+    <div *ngSwitchCase="'customers'">
+        <form [formGroup]="addCustomerFormGroup">
+            <div style="display: flex;flex-direction: column;">
+                <span class="dialog_span">NAME</span>
+                <input type="text" formControlName="name" class="dialog_input" placeholder="Name">
+                <span class="dialog_span">AGE</span>
+                <input type="text" formControlName="age" class="dialog_input" placeholder="Age">
+                <span class="dialog_span">EMAIL</span>
+                <input type="text" formControlName="email" class="dialog_input" placeholder="Email">
+                <span class="dialog_span">PASSWORD</span>
+                <input type="text" formControlName="password" class="dialog_input" placeholder="Password">
+                <button (click)="addLibrary()" class="dialog_btn">ADD CUSTOMER</button>
+            </div>
+        </form>
+    </div>
+    <div *ngSwitchCase="'books'">
+
+    </div>
+    <div *ngSwitchCase="'customerBooks'">
+
+    </div>
+
+</div>

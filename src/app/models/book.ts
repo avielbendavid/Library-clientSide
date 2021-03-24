@@ -1,7 +1,9 @@
 export class Book {
     constructor(
-        private id: number,
-        private name: string,
-        private price: number
+        public id?: number,
+        public name?: string,
+        public pages?: number,
+        public price?: number,
+        public quantity?: number
     ) { }
 }

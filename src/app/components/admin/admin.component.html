@@ -1,14 +1,17 @@
 <div class="container">
     <section style="height: 350px;">
         <div class="header_img_div">
-            <button mat-fab class="header_btn" (click)="goToHome()">
+            <!-- <button mat-fab class="header_btn" (click)="goToHome()">
                 <img src="assets/images/home_icon.png" width="50%">
-            </button>
+            </button> -->
+            <button mat-flat-button color="white"
+               class="contact_btn" (click)="goToHome()">HOME</button>
         </div>
     </section>
     <section style="min-height: 100%;">
         <mat-tab-group mat-align-tabs="center" (selectedIndexChange)="IndexChanged($event)">
             <mat-tab label="Libraries">
+                <button mat-fab color="primary" class="add_btn" (click)="add()">+</button>
                 <div class="table_container">
                     <span class="table_header">
                         Libraries
@@ -18,7 +21,7 @@
                 </div>
             </mat-tab>
             <mat-tab label="Customers">
-                <button mat-fab color="primary" class="add_btn">+</button>
+                <button mat-fab color="primary" class="add_btn" (click)="add()">+</button>
                 <div class="table_container">
                     <span class="table_header">
                         Customers
@@ -33,7 +36,7 @@
                     <span class="table_header">
                         Books
                     </span>
-                    <app-table [tableData]="this.librariesTableData" [tableColumn]="this.librariesTableColumns"
+                    <app-table [tableColumn]="this.booksTableColumns" [tableData]="this.booksTableData"
                         (deleteBook)="deleteBook($event)"></app-table>
                 </div>
             </mat-tab>

@@ -4,7 +4,7 @@
             <span>LOG IN</span>
         </header>
         <form [formGroup]="loginFormGroup" class="form">
-            <input type="text" class="login_input" placeholder="user-email" formControlName="email" [ngClass]="{'warn':
+            <input type="text" class="dialog_input" placeholder="user-email" formControlName="email" [ngClass]="{'warn':
             (this.loginFormGroup.controls.email.errors?.required&&this.loginFormGroup.controls.email.touched)||
             (this.loginFormGroup.controls.email.errors?.email)}">
             <span
@@ -12,7 +12,7 @@
                 class="warn_message">* email is required</span>
             <span *ngIf="this.loginFormGroup.controls.email.errors?.email" class="warn_message">* please enter a valid
                 email</span>
-            <input type="password" class="login_input" placeholder="password" formControlName="password"
+            <input type="password" class="dialog_input" placeholder="password" formControlName="password"
                 [ngClass]="{'warn':(this.loginFormGroup.controls.password.errors?.required&&this.loginFormGroup.controls.password.touched)||
          (this.loginFormGroup.controls.password.errors?.minlength)||(this.loginFormGroup.controls.password.errors?.maxlength)}">
             <span *ngIf="this.loginFormGroup.controls.password.errors?.minlength" class="warn_message">* password min

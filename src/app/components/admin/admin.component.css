@@ -5,49 +5,43 @@
     background-attachment: fixed;
     background-size: 100% 100%;
     box-shadow: 0px 0px 15px black;
-    /* image-rendering: -webkit-optimize-contrast; */
 }
 
-@keyframes header-btn {
+@keyframes add-btn {
     0% {
         position: relative;
+        top: 150px;
         left: 0%;
-        top: 20%;
-        transform: translate(-50%, -50%);
     }
     100% {
         position: relative;
-        left: 10%;
-        top: 20%;
-        transform: translate(-50%, -50%);
+        top: 150px;
+        left: 50px;
     }
 }
-
-.header_btn {
+/* .header_btn {
     position: relative;
-    left: 10%;
+    left:50px;
     top: 20%;
-    transform: translate(-50%, -50%);
     height: 70px;
     width: 70px;
     box-shadow: 0px 0px 5px #e4e4e7;
     background-color: rgb(18, 13, 43);
     animation: header-btn 700ms;
-}
+} */
 
 .container {
     height: 100%;
-    /* min-height: 100%; */
-    /* background-color: #181818; */
 }
 
 .add_btn {
     position: relative;
     top: 150px;
-    left: 20px;
-    background-color: #614e82;
+    left: 50px;
+    background-color: rgb(18, 13, 43);
     font-size: 25px;
     font-weight: normal;
+    animation: add-btn 700ms;
 }
 
 .table_header {
@@ -64,3 +58,34 @@
     flex-direction: column;
     justify-content: center;
 }
+.contact_btn {
+    vertical-align: middle;
+    letter-spacing: 7px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    box-shadow: 0px 0px 5px beige;
+    animation: btn-load 700ms;
+  }
+  @keyframes btn-load {
+    0% {
+      vertical-align: middle;
+      letter-spacing: 7px;
+      text-align: center;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      height: 50px;
+    }
+    100% {
+      vertical-align: middle;
+      letter-spacing: 7px;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%);
+      height: 50px;
+    }
+  }
