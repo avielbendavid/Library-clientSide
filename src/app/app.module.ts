@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -22,6 +22,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { EditDialogComponent } from './components/dialog/edit-dialog/edit-dialog.component';
 import { AddDialogComponent } from './components/dialog/add-dialog/add-dialog.component';
 import { GetDetailsDialogComponent } from './components/dialog/get-details-dialog/get-details-dialog.component';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -49,8 +51,10 @@ import { GetDetailsDialogComponent } from './components/dialog/get-details-dialo
     MatTabsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    MatSelectModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

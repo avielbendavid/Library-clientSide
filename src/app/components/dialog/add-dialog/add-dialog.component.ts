@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { BookCategory } from 'src/app/enums/book-category.enum';
+import { Book } from 'src/app/models/book';
+import { Customer } from 'src/app/models/customer';
 import { Library } from 'src/app/models/library';
 import { ApiService } from 'src/app/services/api.service';
 import { ApplicationService } from 'src/app/services/application.service';
@@ -16,12 +20,14 @@ export class AddDialogComponent implements OnInit {
   addLibraryFormGroup: FormGroup;
   addCustomerFormGroup: FormGroup;
   addBookFormGroup: FormGroup;
+  categories = BookCategory;
 
   constructor(
     private applicationService: ApplicationService,
     private fb: FormBuilder,
     private tableService: TableService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private dialogRef: MatDialogRef<AddDialogComponent>
   ) { }
 
   ngOnInit(): void {
@@ -49,6 +55,10 @@ export class AddDialogComponent implements OnInit {
 
   buildAddBookFormGroup() {
     this.addBookFormGroup = this.fb.group({
+      name: ['', [Validators.required, Validators.pattern('^([A-Z][a-z]*)')]],
+      pages: ['', [Validators.required, Validators.min(0), Validators.max(500)]],
+      price: ['', [Validators.required, Validators.min(0), Validators.max(1000)]],
+      quantity: ['', [Validators.required, Validators.minLength(0), Validators.maxLength(2000)]]
     });
   }
 
@@ -64,23 +74,27 @@ export class AddDialogComponent implements OnInit {
     );
   }
   addCustomer() {
-    const fr = this.addLibraryFormGroup.value;
-    const library: Library = {
+    const fr = this.addCustomerFormGroup.value;
+    const customer: Customer = {
       name: fr.name,
-      city: fr.city
+      age: fr.age,
+      email: fr.email,
+      password: fr.password
     }
-    this.apiService.addLibrary(library).subscribe(
-      (success) => { alert(success); },
+    this.apiService.addCustomer(customer).subscribe(
+      (success) => { alert(success); this.dialogRef.close(); },
       (error) => { alert(error); }
     );
   }
   addBook() {
     const fr = this.addLibraryFormGroup.value;
-    const library: Library = {
+    const book: Book = {
       name: fr.name,
-      city: fr.city
+      pages: fr.pages,
+      price: fr.price,
+      quantity: fr.quantity
     }
-    this.apiService.addLibrary(library).subscribe(
+    this.apiService.addBook(book).subscribe(
       (success) => { alert(success); },
       (error) => { alert(error); }
     );

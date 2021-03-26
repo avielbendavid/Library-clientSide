@@ -1,6 +1,5 @@
 <div [ngSwitch]="status">
 
-
     <div *ngSwitchCase="'libraries'">
         <form [formGroup]="addLibraryFormGroup" autocomplete="off">
             <div style="display: flex;flex-direction: column;">
@@ -12,24 +11,50 @@
             </div>
         </form>
     </div>
+
     <div *ngSwitchCase="'customers'">
         <form [formGroup]="addCustomerFormGroup">
             <div style="display: flex;flex-direction: column;">
                 <span class="dialog_span">NAME</span>
                 <input type="text" formControlName="name" class="dialog_input" placeholder="Name">
                 <span class="dialog_span">AGE</span>
-                <input type="text" formControlName="age" class="dialog_input" placeholder="Age">
+                <input type="number" formControlName="age" class="dialog_input" placeholder="Age">
                 <span class="dialog_span">EMAIL</span>
                 <input type="text" formControlName="email" class="dialog_input" placeholder="Email">
                 <span class="dialog_span">PASSWORD</span>
                 <input type="text" formControlName="password" class="dialog_input" placeholder="Password">
-                <button (click)="addLibrary()" class="dialog_btn">ADD CUSTOMER</button>
+                <button (click)="addCustomer()" class="dialog_btn">ADD CUSTOMER</button>
             </div>
         </form>
     </div>
-    <div *ngSwitchCase="'books'">
 
+    <div *ngSwitchCase="'books'">
+        <form [formGroup]="addBookFormGroup">
+            <div style="display: flex;flex-direction: column;">
+                <span class="dialog_span">NAME</span>
+                <input type="text" formControlName="name" class="dialog_input" placeholder="Name">
+
+                <mat-form-field appearance="fill"
+                    style="width: 150px; left: 50%;transform: translateX(-50%); position: relative;">
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="category" placeholder="Category">
+                        <mat-option *ngFor="let category of categories|keyvalue" value="category.value">
+                            {{category.value}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <input type="text" formControlName="category" class="dialog_input" placeholder="Category">
+                <span class="dialog_span">PAGES</span>
+                <input type="number" formControlName="pages" class="dialog_input" placeholder="Age">
+                <span class="dialog_span">PRICE</span>
+                <input type="number" formControlName="price" class="dialog_input" placeholder="Email">
+                <span class="dialog_span">QUANTITY</span>
+                <input type="number" formControlName="quantity" class="dialog_input" placeholder="Password">
+                <button (click)="addBook()" class="dialog_btn">ADD BOOK</button>
+            </div>
+        </form>
     </div>
+
     <div *ngSwitchCase="'customerBooks'">
 
     </div>

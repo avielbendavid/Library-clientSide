@@ -24,9 +24,18 @@ export class ApiService {
   //************************* Is Active? API ************************
 
   //************************* ADMIN API *****************************
+
   public addLibrary(library: Library) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.post("http://localhost:8080/api/admin/add-library", library, { headers: httpHeaders ,responseType:'text'});
+    return this.httpClient.post("http://localhost:8080/api/admin/add-library", library, { headers: httpHeaders, responseType: 'text' });
+  }
+  public addCustomer(customer: Customer) {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.post("http://localhost:8080/api/admin/add-customer", customer, { headers: httpHeaders, responseType: 'text' });
+  }
+  public addBook(book: Book) {
+    const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
+    return this.httpClient.post("http://localhost:8080/api/admin/add-book", book, { headers: httpHeaders, responseType: 'text' });
   }
 
   public getAllLibraries(): Observable<Library[]> {
@@ -58,15 +67,15 @@ export class ApiService {
 
   public getOneLibrary(libraryId: number) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.get('http://localhost:8080/api/admin/get-one-library/' + libraryId, { headers: httpHeaders ,responseType:'text'});
+    return this.httpClient.get('http://localhost:8080/api/admin/get-one-library/' + libraryId, { headers: httpHeaders, responseType: 'text' });
   }
   public getOneCustomer(customerId: number) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.get('http://localhost:8080/api/admin/get-one-customer/' + customerId, { headers: httpHeaders ,responseType:'text'});
+    return this.httpClient.get('http://localhost:8080/api/admin/get-one-customer/' + customerId, { headers: httpHeaders, responseType: 'text' });
   }
   public getOneBook(bookId: number) {
     const httpHeaders: HttpHeaders = new HttpHeaders({ token: localStorage.getItem('token') });
-    return this.httpClient.get('http://localhost:8080/api/admin/get-one-book/' + bookId, { headers: httpHeaders ,responseType:'text'});
+    return this.httpClient.get('http://localhost:8080/api/admin/get-one-book/' + bookId, { headers: httpHeaders, responseType: 'text' });
   }
 
   //************************* CUSTOMER API *****************************
