@@ -37,20 +37,18 @@
                 <mat-form-field appearance="fill"
                     style="width: 150px; left: 50%;transform: translateX(-50%); position: relative;">
                     <mat-label>Category</mat-label>
-                    <mat-select formControlName="category" placeholder="Category">
+                    <mat-select formControlName="category" required placeholder="Category">
                         <mat-option *ngFor="let category of categories|keyvalue" value="category.value">
                             {{category.value}}</mat-option>
                     </mat-select>
                 </mat-form-field>
-
-                <input type="text" formControlName="category" class="dialog_input" placeholder="Category">
                 <span class="dialog_span">PAGES</span>
                 <input type="number" formControlName="pages" class="dialog_input" placeholder="Age">
                 <span class="dialog_span">PRICE</span>
                 <input type="number" formControlName="price" class="dialog_input" placeholder="Email">
                 <span class="dialog_span">QUANTITY</span>
                 <input type="number" formControlName="quantity" class="dialog_input" placeholder="Password">
-                <button (click)="addBook()" class="dialog_btn">ADD BOOK</button>
+                <button (click)="addBook()" class="dialog_btn" >ADD BOOK</button>
             </div>
         </form>
     </div>

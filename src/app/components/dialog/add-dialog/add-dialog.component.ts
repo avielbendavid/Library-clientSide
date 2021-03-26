@@ -56,6 +56,7 @@ export class AddDialogComponent implements OnInit {
   buildAddBookFormGroup() {
     this.addBookFormGroup = this.fb.group({
       name: ['', [Validators.required, Validators.pattern('^([A-Z][a-z]*)')]],
+      category: ['', Validators.required],
       pages: ['', [Validators.required, Validators.min(0), Validators.max(500)]],
       price: ['', [Validators.required, Validators.min(0), Validators.max(1000)]],
       quantity: ['', [Validators.required, Validators.minLength(0), Validators.maxLength(2000)]]
@@ -90,6 +91,7 @@ export class AddDialogComponent implements OnInit {
     const fr = this.addLibraryFormGroup.value;
     const book: Book = {
       name: fr.name,
+      category: fr.category,
       pages: fr.pages,
       price: fr.price,
       quantity: fr.quantity
