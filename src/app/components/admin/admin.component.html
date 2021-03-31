@@ -4,20 +4,29 @@
             <!-- <button mat-fab class="header_btn" (click)="goToHome()">
                 <img src="assets/images/home_icon.png" width="50%">
             </button> -->
-            <button mat-flat-button color="white"
-               class="contact_btn" (click)="goToHome()">HOME</button>
+            <button mat-flat-button color="white" class="contact_btn" (click)="goToHome()">HOME</button>
         </div>
     </section>
     <section style="min-height: 100%;">
         <mat-tab-group mat-align-tabs="center" (selectedIndexChange)="IndexChanged($event)">
             <mat-tab label="Libraries">
-                <button mat-fab color="primary" class="add_btn" (click)="add()">+</button>
-                <div class="table_container">
-                    <span class="table_header">
-                        Libraries
-                    </span>
-                    <app-table [tableColumn]="this.librariesTableColumns" [tableData]="this.librariesTableData"
-                        (deleteLibrary)="deleteLibrary($event)"></app-table>
+                <div style="display: flex;justify-content: space-evenly; margin :15px;">
+                    <!-- <button (click)="changeView()">Table/List</button> -->
+                    <mat-slide-toggle color="primary" (click)="changeView()">Table/Cards</mat-slide-toggle>
+                    <span style="font-size: 40px;text-shadow: 0px 0px 5px;">Libraries</span>
+                </div>
+                <div *ngIf="this.showTable">
+                    <button mat-fab color="primary" class="add_btn" (click)="add()">+</button>
+                    <div class="table_container">
+                        <!-- <span class="table_header">
+                            Libraries
+                        </span> -->
+                        <app-table [tableColumn]="this.librariesTableColumns" [tableData]="this.librariesTableData"
+                            (deleteLibrary)="deleteLibrary($event)"></app-table>
+                    </div>
+                </div>
+                <div *ngIf="!this.showTable">
+                    <app-cards [tableColumn]="this.librariesTableColumns" [tableData]="this.librariesTableData"></app-cards>
                 </div>
             </mat-tab>
             <mat-tab label="Customers">

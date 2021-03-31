@@ -16,13 +16,13 @@
         <form [formGroup]="addCustomerFormGroup">
             <div style="display: flex;flex-direction: column;">
                 <span class="dialog_span">NAME</span>
-                <input type="text" formControlName="name" class="dialog_input" placeholder="Name">
+                <input type="text" formControlName="name" placeholder="Name" class="dialog_input" [ngClass]="{warn:this.addCustomerFormGroup}">
                 <span class="dialog_span">AGE</span>
-                <input type="number" formControlName="age" class="dialog_input" placeholder="Age">
+                <input type="number" formControlName="age" placeholder="Age" class="dialog_input" >
                 <span class="dialog_span">EMAIL</span>
-                <input type="text" formControlName="email" class="dialog_input" placeholder="Email">
+                <input type="text" formControlName="email" placeholder="Email" class="dialog_input" >
                 <span class="dialog_span">PASSWORD</span>
-                <input type="text" formControlName="password" class="dialog_input" placeholder="Password">
+                <input type="text" formControlName="password" placeholder="Password" class="dialog_input" >
                 <button (click)="addCustomer()" class="dialog_btn">ADD CUSTOMER</button>
             </div>
         </form>

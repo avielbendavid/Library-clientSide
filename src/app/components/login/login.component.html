@@ -6,22 +6,27 @@
         <form [formGroup]="loginFormGroup" class="form">
             <input type="text" class="dialog_input" placeholder="user-email" formControlName="email" [ngClass]="{'warn':
             (this.loginFormGroup.controls.email.errors?.required&&this.loginFormGroup.controls.email.touched)||
-            (this.loginFormGroup.controls.email.errors?.email)}">
+            (this.loginFormGroup.controls.email.errors?.email&&this.loginFormGroup.controls.email.touched)}">
             <span
                 *ngIf="this.loginFormGroup.controls.email.errors?.required&&this.loginFormGroup.controls.email.touched"
                 class="warn_message">* email is required</span>
-            <span *ngIf="this.loginFormGroup.controls.email.errors?.email" class="warn_message">* please enter a valid
+            <span *ngIf="this.loginFormGroup.controls.email.errors?.email&&this.loginFormGroup.controls.email.touched"
+                class="warn_message">* please enter a valid
                 email</span>
-            <input type="password" class="dialog_input" placeholder="password" formControlName="password"
-                [ngClass]="{'warn':(this.loginFormGroup.controls.password.errors?.required&&this.loginFormGroup.controls.password.touched)||
-         (this.loginFormGroup.controls.password.errors?.minlength)||(this.loginFormGroup.controls.password.errors?.maxlength)}">
-            <span *ngIf="this.loginFormGroup.controls.password.errors?.minlength" class="warn_message">* password min
-                chars : 5</span>
-            <span *ngIf="this.loginFormGroup.controls.password.errors?.maxlength" class="warn_message">* password max
-                chars : 8</span>
+            <input type="password" class="dialog_input" placeholder="password" formControlName="password" [ngClass]="{'warn':(this.loginFormGroup.controls.password.errors?.required&&this.loginFormGroup.controls.password.touched)||
+         (this.loginFormGroup.controls.password.errors?.minlength&&this.loginFormGroup.controls.password.touched)||
+         (this.loginFormGroup.controls.password.errors?.maxlength&&this.loginFormGroup.controls.password.touched)}">
             <span
                 *ngIf="this.loginFormGroup.controls.password.errors?.required&&this.loginFormGroup.controls.password.touched"
                 class="warn_message">* password is required</span>
+            <span
+                *ngIf="this.loginFormGroup.controls.password.errors?.minlength&&this.loginFormGroup.controls.password.touched"
+                class="warn_message">* password min
+                chars : 5</span>
+            <span
+                *ngIf="this.loginFormGroup.controls.password.errors?.maxlength&&this.loginFormGroup.controls.password.touched"
+                class="warn_message">* password max
+                chars : 8</span>
             <br>
             <label style="color: #23bbe8;text-transform: uppercase;">Client Type : ***</label>
             <br>

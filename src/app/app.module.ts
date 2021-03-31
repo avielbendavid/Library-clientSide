@@ -23,6 +23,9 @@ import { EditDialogComponent } from './components/dialog/edit-dialog/edit-dialog
 import { AddDialogComponent } from './components/dialog/add-dialog/add-dialog.component';
 import { GetDetailsDialogComponent } from './components/dialog/get-details-dialog/get-details-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
+import { CardsComponent } from './components/cards/cards.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 
 @NgModule({
@@ -40,7 +43,8 @@ import { MatSelectModule } from '@angular/material/select';
     ContactComponent,
     EditDialogComponent,
     AddDialogComponent,
-    GetDetailsDialogComponent
+    GetDetailsDialogComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import { MatSelectModule } from '@angular/material/select';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule, 
+    MatSlideToggleModule
+
 
 
   ],

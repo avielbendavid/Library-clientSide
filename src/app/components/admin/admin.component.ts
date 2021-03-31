@@ -21,6 +21,7 @@ export class AdminComponent implements OnInit {
   customersTableData: Customer[] = [];
   booksTableColumns: string[] = [];
   booksTableData: Library[] = [];
+  showTable: boolean = true;
 
   constructor(
     private adminService: AdminService,
@@ -98,4 +99,9 @@ export class AdminComponent implements OnInit {
   goToHome() {
     this.router.navigate(['/home']);
   }
+
+  changeView() {
+    this.showTable = !this.showTable;
+  }
+
 }
