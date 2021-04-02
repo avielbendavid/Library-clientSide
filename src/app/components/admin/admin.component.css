@@ -6,7 +6,6 @@
     background-size: 100% 100%;
     box-shadow: 0px 0px 15px black;
 }
-
 @keyframes add-btn {
     0% {
         position: relative;
@@ -31,7 +30,7 @@
 } */
 
 .container {
-    height: 100%;
+    min-height: 100%;
 }
 
 .add_btn {
@@ -44,20 +43,12 @@
     animation: add-btn 700ms;
 }
 
-.table_header {
-    width: 100%;
-    text-align: center;
-    font-size: 40px;
-    /* color: white; */
-    text-shadow: 0px 0px 5px;
-}
-
-.table_container {
+/* .table_container {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} */
 .contact_btn {
     vertical-align: middle;
     letter-spacing: 7px;
@@ -68,24 +59,38 @@
     height: 50px;
     box-shadow: 0px 0px 5px beige;
     animation: btn-load 700ms;
-  }
-  @keyframes btn-load {
+}
+@keyframes btn-load {
     0% {
-      vertical-align: middle;
-      letter-spacing: 7px;
-      text-align: center;
-      left: 50%;
+        vertical-align: middle;
+        letter-spacing: 7px;
+        text-align: center;
+        left: 50%;
       top: 0;
       transform: translateX(-50%);
       height: 50px;
     }
     100% {
-      vertical-align: middle;
-      letter-spacing: 7px;
-      text-align: center;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%);
-      height: 50px;
+        vertical-align: middle;
+        letter-spacing: 7px;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+        height: 50px;
     }
-  }
+}
+::ng-deep    .mat-slide-toggle .mat-slide-toggle-thumb {
+    background-color: rgb(29, 14, 68); /*replace with your color*/
+}
+
+::ng-deep .mat-slide-toggle .mat-slide-toggle-bar {
+    background-color: rgb(150, 150, 137);  /*replace with your color*/
+}
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: rgb(29, 14, 68); /*replace with your color*/
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: rgb(150, 150, 137);  /*replace with your color*/
+}

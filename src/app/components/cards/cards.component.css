@@ -1,0 +1,39 @@
+.container {
+    background-color: #f5f5f5;
+    padding: 50px;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 5px 15px rgb(184, 162, 162);
+    animation: cards-load 1.2s;
+}
+
+@keyframes cards-load {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.card {
+    width: 225px;
+    height: 300px;
+    margin: 20px;
+    background-color: white;
+    border: 2px solid rgb(208 208 208);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    transition: all 0.7s;
+}
+.card:hover{
+    transform: translateY(-25px);
+    box-shadow: 0px 5px 15px #777;
+
+}

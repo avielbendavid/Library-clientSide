@@ -38,6 +38,7 @@ export class AdminComponent implements OnInit {
     this.refreshBooksTable();
   }
 
+  
   refreshLibrariesTable() {
     this.librariesTableColumns = this.adminService.librariesTableColumns;
     this.apiService.getAllLibraries().subscribe(
